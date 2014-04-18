@@ -18,6 +18,7 @@
     under the License.
 -->
 <html>
+
     <head>
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
@@ -25,7 +26,8 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+<!--         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"> -->
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css">
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <style type="text/css">
               html { height: 100% }
@@ -35,21 +37,28 @@
         <title>Hello World</title>
     </head>
     <body>
-
-        <div class='overlay'>
-            <div id='map-canvas'></div>
-            <button type="button" class="btn btn-success offsetBtn" id='testButton'>singles</button>
-            <button type="button" class="btn btn-primary" id='testButton'>couples</button>
-            <button type="button" class="btn btn-warning" id='testButton'>friends</button>
-                <br>
-            <button type='button' class='btn btn-primary addLocation'>Add my Location</button>
+    <div data-role='page' class='page-map' id='homepage'>
+        <a href='#myPanel' class='ui-btn ui-icon-user ui-btn-icon-notext'></a>
+        <a href='#myPanel' class='ui-btn ui-icon-bars ui-btn-icon-notext panelButton panelFloat'></a>
+        <div data-role='panel' id='myPanel' data-display='overlay'>
+            <span>Hello this is a panel!</span>
+            <a href="#homepage" data-rel="close" class='panelButton'>Close panel!</a>
         </div>
+        <div data-role='content'>
+            <div id='map-canvas'></div>
+            <input type='button' value='singles' data-inline='true' id='testButton' />
+            <input type='button' value='couples' data-inline='true' id='testButton' />
+            <input type='button' value='view all' data-inline='true' id='testButton' data-icon='star' />
+        </div>
+    </div>
 
 
-
-        <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
-        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <!-- // <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script> -->
+<!--         // <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script> -->
+  
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD90W6MypWGP6s4luD2kQHhZ9IFQrfr04g&sensor=true"></script>
+        <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="js/test.js"></script>
